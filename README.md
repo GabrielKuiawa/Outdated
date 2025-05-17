@@ -12,8 +12,8 @@
 #### Clone Repository
 
 ```
-$ git clone git@github.com:SI-DABE/problem-track.git
-$ cd problem-track
+$ git git@github.com:GabrielKuiawa/Outdated.git
+$ cd Outdated
 ```
 
 #### Define the env variables
