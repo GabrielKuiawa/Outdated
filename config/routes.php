@@ -1,7 +1,7 @@
 <?php
 
-use App\Controllers\HomeController;
+use App\Controllers\UsersController;
 use Core\Router\Route;
 
 // Authentication
-Route::get('/', [HomeController::class, 'index'])->name('root');
+Route::get('/api/users', [UsersController::class, 'getAllUsers'])->name('root');
