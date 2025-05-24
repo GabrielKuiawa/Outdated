@@ -10,12 +10,12 @@ use Core\Database\ActiveRecord\Model;
  * @property string $name
  * @property string $email
  * @property string $encrypted_password
- * @property string $avatar_name
+ * @property string $profile_picture_url
  */
 class User extends Model
 {
     protected static string $table = 'users';
-    protected static array $columns = ['name', 'email', 'encrypted_password', 'avatar_name'];
+    protected static array $columns = ['name', 'email', 'encrypted_password', 'is_manager', 'profile_picture_url'];
 
     protected ?string $password = null;
     protected ?string $password_confirmation = null;
