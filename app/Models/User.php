@@ -9,6 +9,7 @@ use Core\Database\ActiveRecord\Model;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string $is_manager
  * @property string $encrypted_password
  * @property string $profile_picture_url
  */

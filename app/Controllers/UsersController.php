@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\User;
 use Core\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class UsersController extends Controller
 {
     public function index(): void
     {
@@ -24,11 +24,12 @@ class HomeController extends Controller
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
-                'is_manager' => $user->is_manager,
+                'is_manager' => (bool) $user->is_manager,
                 'profile_picture_url' => $user->profile_picture_url,
             ];
         }
 
+        http_response_code(200);
         header('Content-Type: application/json');
         echo json_encode($result);
     }

@@ -9,21 +9,21 @@ DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     email VARCHAR(255) UNIQUE,
     encrypted_password VARCHAR(255) NOT NULL,
-    is_manager BOOLEAN DEFAULT FALSE,
+    is_manager TINYINT(1) DEFAULT 0,
     profile_picture_url VARCHAR(500)
 );
 
 CREATE TABLE teams (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255)
 );
 
 CREATE TABLE user_teams (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     joined_at DATE,
     team_id INT,
     user_id INT,
@@ -32,15 +32,15 @@ CREATE TABLE user_teams (
 );
 
 CREATE TABLE expense_types (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE,
     icon_url VARCHAR(500)
 );
 
 CREATE TABLE payment_records (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     description TEXT,
-    amount FLOAT,
+    amount DECIMAL(10,2),
     payable_id INT,
     payable_type VARCHAR(50), 
     expense_type_id INT,
@@ -48,14 +48,14 @@ CREATE TABLE payment_records (
 );
 
 CREATE TABLE resources (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     file_path VARCHAR(500),
     payment_records_id INT,
     FOREIGN KEY (payment_records_id) REFERENCES payment_records(id)
 );
 
 CREATE TABLE alerts (
-    id INT PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     message TEXT,
     is_read BOOLEAN,
