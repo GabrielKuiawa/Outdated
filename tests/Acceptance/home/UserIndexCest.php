@@ -9,10 +9,9 @@ class UserIndexCest extends BaseAcceptanceCest
 {
     public function seeJsonResponse(AcceptanceTester $page): void
     {
-        // $page->amOnPage('/api/users');
+        // $page->sendGET('users');
         // $page->seeResponseCodeIs(200);
         // $page->seeResponseIsJson();
-        
         // $page->seeResponseContainsJson([
         //     [
         //         'name' => 'John Doe',
