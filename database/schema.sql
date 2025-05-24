@@ -7,6 +7,7 @@ CREATE TABLE users (
     name VARCHAR(255),
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
+     BOOLEAN DEFAULT FALSE,
     profile_picture_url VARCHAR(500)
 );
 
